@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<title>Tombola</title>
+		<meta charset="utf-8">
+		
+		<!-- ------------------------------------------------------------------------------------------------------------------------------------------------- -->
+		<script src='./js/Winwheel.js'></script>
+		<script src='./js/TweenMax.min.js'></script>
+		<script src="./js/jquery-3.6.3.min.js"></script>
+
+		<script src="./js/jquery-3.3.1.slim.js"></script>
+		<script src="./js/jquery-csv.js"></script>
+		<script src="./js/helpers.js"></script>
+		<script src="./js/highlight.min.js"></script>
+
+		<script src="./js/tirage.js"></script>
+
+		<link rel="stylesheet" href="./css/screen.css">
+		<link type="text/css" rel="stylesheet" href="./css/animate.min.css"></style>
+		<!-- ------------------------------------------------------------------------------------------------------------------------------------------------- -->
+	</head>
+	<body>
+	   <div style="width:100%; height:100%; position: absolute;">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td style="vertical-align: top;">
+						<div>
+							
+							<div class="texteEffet" style="cursor:pointer;" onclick="lancerTirage(false);">
+								<div class="bg"> Lancer le tirage </div>
+								<div class="fg"> Lancer le tirage </div>
+							</div>
+							
+							<br>
+							
+							<div class="texteEffet" style="height:25px; cursor:pointer; padding:5px;" onClick="javascript:lancerTirage(true);">
+							  <div class="bg" style="font-size:20px;"> Relancer </div>
+							  <div class="fg" style="font-size:20px;"> Relancer </div>
+							</div>
+							
+							<br>
+							<br>
+							
+							<div style="">
+								<div style="display: inline-block;">
+									<img src="./images/cadeau.png" id="cadeau" width="75" height="75" />
+								</div>
+								<div id="lotEnCours"><br></div>
+							</div>
+							<br>
+							
+						</div>
+						<div width="100%" style="margin-left: 80px;">
+							<table id="gagnants" border="1" width="98%">
+								<thead>
+									<tr>
+										<th width="350">Gagnant</th>
+										<th width="490">Lot</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</td>
+					<td width="938" class="tombola-roue" align="center" valign="center">
+						<canvas id="canvas" width="870" height="870">
+							<p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
+						</canvas>
+					</td>
+				</tr>
+			</table>
+			
+		</div>
+		
+		<div id="div-gagnant" onClick="javascript:this.style.display='none';">Fin du tirage au sort.<br>Merci à tous pour votre participation !!!</div>
+		
+		<img src="images/rouage.png" width="50" height="50" style="position:fixed; top:0px; left:0px; cursor:pointer;" id="parametres-bouton" />
+		
+		<div id="parametres">
+			<table width="100%" cellspacing="0" cellpadding="0">
+				<tr>
+					<td colspan="2" align="center" id="parametres-titre">
+						Paramètres
+					</td>
+				</tr>
+				<tr>
+					<td width="35%">
+						<button onclick="lotPrecedent();"><< Lot précédent</button>
+					</td>
+					<td width="65%" style="text-align:right;">
+						<button onclick="lotSuivant();">Lot suivant >></button>
+					</td>
+				</tr>
+				<tr>
+					<td>CSV Tickets :</td>
+					<td>
+						<input type="file" id="tickets" name="tickets[]" multiple />
+					</td>
+				</tr>
+				<tr>
+					<td>CSV Lots :</td>
+					<td>
+						<input type="file" id="lots" name="lots[]" multiple />
+					</td>
+				</tr>
+			</table>
+		
+		</div>
+	</body>
+</html>

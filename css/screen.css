@@ -1,0 +1,164 @@
+/* Reset some things first */
+/* html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, pre, code, address, variable, form, fieldset, blockquote { */
+	/* padding: 0; */
+	/* margin: 0; */
+	/* font-weight: normal; */
+/* } */
+
+a img, img {
+	border: 0;
+}
+
+body {
+	font-family: verdana, arial, sans-serif;
+	font-size: 14px;
+	color: black;
+	background-color: white;
+}
+
+/* Small fix for position of the images in the no canvas version of the pie graph */
+#no_canvas {
+	margin-top: 0 !important;
+}
+
+
+td.tombola-roue {
+	padding-top: 65px;
+    background: url(../images/roue.png);
+    background-position: center;
+    background-repeat: no-repeat;
+	background-position-y: 38px;
+}
+
+
+#div-gagnant {
+	display:none;
+    position: fixed;
+    top: calc(50% - 250px);
+    left: calc(50% - 400px);
+    height: 500px;
+    width: 800px;
+    background-color: #ADA578;
+    box-sizing: border-box;
+    color: white;
+    font-size: 51px;
+    text-align: center;
+    padding: 50px;
+	padding-top: 150px;
+	border: 10px solid #FAD2ED;
+}
+
+
+
+/* ******************************************************* */
+
+:root {
+  --gold: #ffb338;
+  --light-shadow: #77571d;
+  --dark-shadow: #3e2904;
+}
+
+body {
+  margin: 0;
+}
+
+.texteEffet {
+	box-sizing: border-box;
+	display: grid;
+	grid-template-areas: 'overlap';
+	place-content: center;
+	text-transform: uppercase;
+}
+
+.texteEffet > div {
+  background-clip: text;  
+  -webkit-background-clip: text;
+  color: #363833;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 50px;
+  grid-area: overlap;
+  letter-spacing: 1px;
+  -webkit-text-stroke: 4px transparent;
+}
+
+div.bg {
+  background-image: repeating-linear-gradient( 105deg, 
+    var(--gold) 0% , 
+    var(--dark-shadow) 5%,
+    var(--gold) 12%);
+  color: transparent;
+  filter: drop-shadow(5px 15px 15px black);
+  transform: scaleY(1.05);
+  transform-origin: top;
+}
+
+div.fg{
+  background-image: repeating-linear-gradient( 5deg,  
+    var(--gold) 0% , 
+    var(--light-shadow) 23%, 
+    var(--gold) 31%);
+  color: #1e2127;
+  transform: scale(1);
+}
+
+#gagnants tr th, #gagnants tr td {
+	font-size:20px;
+}
+
+#parametres {
+	position:fixed;
+	top:35px;
+	left:35px;
+	background-color: rgb(153,204,206);
+	padding:25px;
+	width:550px;
+	border-radius:25px;
+	border: 6px double black;
+}
+
+#parametres-titre {
+	font-size:18pt;
+	font-weight:bold;
+	padding-bottom:25px;
+}
+
+
+#lotEnCours {
+	text-align: center;
+	font-size: 18pt;
+	display: inline-block;
+	width: 90%;
+    height: 50px;
+    vertical-align: middle;
+    position: relative;
+    vertical-align: middle;
+    position: relative;
+    padding-bottom: 25px;
+    padding-top: 25px;
+	/* background-color: rgb(42,152,157); */
+	background-color: rgb(153,204,206);
+	border-radius: 25px;
+}
+
+#cadeau {
+	display: inline-block;
+    vertical-align: middle;
+}
+
+#gagnants > thead, #gagnants > tbody {
+	display: inline-block;
+    width: 850px;
+}
+
+#gagnants > tbody {
+	overflow-y: scroll;
+    overflow-x: clip;
+	height:600px;
+	max-height:600px;
+}
+
+#gagnants tbody tr:last-child td {
+	font-size:28px;
+	background-color: rgb(153,204,206);
+}
