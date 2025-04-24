@@ -146,6 +146,7 @@ div.fg{
 html.tablette {
 	background-image: url('../images/blackboard2.png');
 	background-size: 110%;
+	background-attachment: fixed;
 }
 
 body.tablette {
@@ -179,13 +180,53 @@ tr.cadeauGagne td.gagnantTicket, tr.cadeauGagne td.gagnantLot  {
 	border-radius: 25px
 }
 
-#gagnants.tablette td, #gagnants.tablette th {
-	font-size:24px;
+#panel {
+	background-color:#2f2f2f;
+	position:fixed;
+	width:100%;
+	top:0px;
+	left:0px;
 }
 
+#table-panel.tablette.panel thead tr th:first-child {
+	width:150px;
+}
+
+#table-panel.tablette.panel {
+	color: whitesmoke;
+}
+
+#btn-tirer, #btn-retirer {
+	margin-right:25px;
+	cursor:pointer;
+}
+
+/*
+#gagnants.tablette td, #gagnants.tablette th {
+	font-size:24px;
+	position: sticky;
+}
+
+#gagnants thead {
+	/* background-color:#2f2f2f; * /
+}
+
+#gagnants.tablette thead tr:first-child th {
+	top: 0px;
+	background-color:#2f2f2f;
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+}
+
+#gagnants.tablette thead  tr:last-child th {
+	top: 35px;
+	background-color:#2f2f2f;
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+}
+*/
 #gagnants.tablette {
 	color: whitesmoke;
 	width:100%;
+	padding-top:40px;
 }
 
 #gagnants tr th {
@@ -234,7 +275,7 @@ tr.cadeauGagne td.gagnantTicket, tr.cadeauGagne td.gagnantLot  {
 }
 
 #gagnants:not(.tablette) > tbody {
-	overflow-y: scroll;
+	overflow-y: hidden;
     overflow-x: clip;
 	height:650px;
 	max-height:650px;
